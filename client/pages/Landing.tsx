@@ -5,29 +5,51 @@ import { motion, AnimatePresence } from "framer-motion"
 import kaya from '../public/kaya.jpeg'
 import homoners from '../public/homoners.jpeg'
 import fam from '../public/fam.jpeg'
+import jobs from '../public/jobs.jpeg'
+import simMeeting from '../public/simMeeting.jpeg'
 
 
 function Landing(){
 
+    const defaultImage = fam
+    const defaultText = ['About Me', 'Hello World! My name is Jake Wilcox. I am 23 Years old and an aspiaring full stack developer. To learn more about my personbal life, click the button on the right. If you want to get down to buisness, hit the profesional button on the left.']
+
     const personalPhotos = [kaya, homoners]
-    const personalText = [['About Me', "Hello World! My name is Jake Wilcox. I am 23 Years old and an aspiaring full stack developer. To learn more about my personbal life, click the button on the right. If you want to get down to buisness, hit the profesional button on the left."]]
-    var personalIndx = -1
+    const personalText = [['testing1', "testing 1"], ['testin2', 'rest']]
+    const [personalIndx, setPersonalIndx] = useState(0)
 
-    const profesionalPhotos = []
-    const profesionalText = []
-    var profesonalIndx = -1
+    const profesionalPhotos = [jobs, simMeeting]
+    const profesionalText = [['ASU Alumni', 'I graduated from asu!']]
+    const [profesionalIndx, setProfesonalIndx] = useState(0)
 
-    const [currentImage, setImage] = useState(fam)
-    const [currentAbout, setAbout] = useState(['testing', 'testing testing'])
+    const [currentImage, setImage] = useState(defaultImage)
+    const [currentAbout, setAbout] = useState(defaultText)
 
-    console.log(currentAbout[0])
-    console.log(currentAbout[1])
 
     const nextPersonal = () => {
-        personalIndx += 1
-        setAbout(personalText[personalIndx])
-        setImage(personalPhotos[personalIndx])
+        if(personalIndx < personalPhotos.length && personalIndx < personalText.length){
+            setAbout(personalText[personalIndx])
+            setImage(personalPhotos[personalIndx])
+            setPersonalIndx(personalIndx + 1)
+        }
+        // else we can grey out the button
     }
+    const nextProfesonal = () => {
+        if(profesionalIndx < profesionalPhotos.length && profesionalIndx < profesionalText.length){
+            setAbout(profesionalText[profesionalIndx])
+            setImage(profesionalPhotos[profesionalIndx])
+            setProfesonalIndx(profesionalIndx + 1)
+        }
+        // else we can grey out the button
+    }
+
+    const resetAboutMe = () => {
+        setAbout(defaultText)
+        setImage(defaultImage)
+        setPersonalIndx(0)
+        setProfesonalIndx(0)
+    }
+
 
 
 
@@ -63,9 +85,21 @@ function Landing(){
                     transition={{duration: 2}}
                     className=" flex-1 bg-red-300">
 
+                        <AnimatePresence initial={false} mode='wait'>
+                            <motion.div
+                            key={currentImage.src}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            exit={{opacity: 0}}
+                            transition={{duration: .3}}
+                            >
+
 
                         <h2 className="text-6xl">{currentAbout[0]}</h2>
                         <p className="">{currentAbout[1]}</p>
+
+                        </motion.div>
+                        </AnimatePresence>
 
 
                     </motion.div>
@@ -80,8 +114,14 @@ function Landing(){
 
 
 
-                        <AnimatePresence initial={false} >
-                            <motion.div>
+                        <AnimatePresence initial={false} mode='wait'>
+                            <motion.div
+                            key={currentImage.src}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            exit={{opacity: 0}}
+                            transition={{duration: .3}}
+                            >
                                 <Image src={currentImage} alt='/'width={426}/>
                             </motion.div>
                         </AnimatePresence>
@@ -97,8 +137,8 @@ function Landing(){
                 </div>
                 <div className="flex justify-between mt-4">
 
-                <button className="bg-green-400 p-2" onClick={nextPersonal}>Professonal</button>
-                <button className="bg-green-400 p-2" onClick={nextPersonal}>Restart</button>
+                <button className="bg-green-400 p-2" onClick={nextProfesonal}>Professonal</button>
+                <button className="bg-green-400 p-2" onClick={resetAboutMe}>Restart</button>
                 <button className="bg-green-400 p-2" onClick={nextPersonal}>Personal</button>
                 </div>
 
