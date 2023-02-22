@@ -2,25 +2,26 @@ import Image from "next/image"
 import React, { useState } from "react"
 import Navbar from "../components/Navbar"
 import { motion, AnimatePresence } from "framer-motion"
-import kaya from '../public/kaya.jpeg'
-import homoners from '../public/homoners.jpeg'
-import fam from '../public/fam.jpeg'
-import jobs from '../public/jobs.jpeg'
-import simMeeting from '../public/simMeeting.jpeg'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRotateLeft } from '@fortawesome/free-solid-svg-icons'
+
+import parse from 'html-react-parser'
+
+import { kaya, homoners, fam, jobs, simMeeting } from '../public'
 
 function Landing(){
 
     const defaultImage = fam
-    const defaultText = ['About Me', 'Hello World! My name is Jake Wilcox. I am 23 Years old and an aspiaring full stack developer. To learn more about my personbal life, click the button on the right. If you want to get down to buisness, hit the profesional button on the left.']
+    const defaultText = ['About Me', '<p>Hello World! My name is Jake Wilcox. I am 23 Years old and an aspiaring full stack developer.</p> <br><p>To learn more about my personbal life, click the button on the right. If you want to get down to buisness, hit the professional button on the left.</p>']
 
     const personalPhotos = [kaya, homoners]
     const personalText = [['testing1', "testing 1"], ['testin2', 'rest']]
     const [personalIndx, setPersonalIndx] = useState(0)
 
-    const profesionalPhotos = [jobs, simMeeting]
-    const profesionalText = [['ASU Alumni', 'I graduated from asu!']]
-    const [profesionalIndx, setProfesonalIndx] = useState(0)
+    const professionalPhotos = [jobs, simMeeting]
+    const professionalText = [['ASU Alumni', 'I graduated from asu!']]
+    const [professionalIndx, setProfesonalIndx] = useState(0)
 
     const [currentImage, setImage] = useState(defaultImage)
     const [currentAbout, setAbout] = useState(defaultText)
@@ -35,10 +36,10 @@ function Landing(){
         // else we can grey out the button
     }
     const nextProfesonal = () => {
-        if(profesionalIndx < profesionalPhotos.length && profesionalIndx < profesionalText.length){
-            setAbout(profesionalText[profesionalIndx])
-            setImage(profesionalPhotos[profesionalIndx])
-            setProfesonalIndx(profesionalIndx + 1)
+        if(professionalIndx < professionalPhotos.length && professionalIndx < professionalText.length){
+            setAbout(professionalText[professionalIndx])
+            setImage(professionalPhotos[professionalIndx])
+            setProfesonalIndx(professionalIndx + 1)
         }
         // else we can grey out the button
     }
@@ -62,7 +63,7 @@ function Landing(){
                     <div className=" text-6xl text-cyan-100 flex-1">
                         <p>JW</p>
                     </div>
-                    <div className="text-l text-cyan-100 flex-1">
+                    <div className="text-l text-sky-100 flex-1">
                         <p>bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal</p>
                     </div>
                 </div>
@@ -74,7 +75,7 @@ function Landing(){
 
                 <Navbar/>
 
-                <div className="bg-green-300 mt-96 mx-40 p-10">
+                <div className=" mt-96 mx-40 p-10 bg-stone-800 rounded-lg">
 
                 <div className="flex">
 
@@ -83,7 +84,7 @@ function Landing(){
                     whileInView={{x:0, opacity: 1}}
                     viewport={{once:false, amount:.1}}
                     transition={{duration: 2}}
-                    className=" flex-1 bg-red-300">
+                    className=" flex-1">
 
                         <AnimatePresence initial={false} mode='wait'>
                             <motion.div
@@ -92,11 +93,13 @@ function Landing(){
                             animate={{opacity: 1}}
                             exit={{opacity: 0}}
                             transition={{duration: .3}}
+                            className="p-5"
                             >
 
 
                         <h2 className="text-6xl">{currentAbout[0]}</h2>
-                        <p className="">{currentAbout[1]}</p>
+                        <br/>
+                        {parse(currentAbout[1])}
 
                         </motion.div>
                         </AnimatePresence>
@@ -109,7 +112,7 @@ function Landing(){
                     whileInView={{x:0, opacity: 1}}
                     viewport={{once:false, amount:.1}}
                     transition={{duration: 2}}
-                    className="flex-2 bg-blue-300">
+                    className="flex-2 ">
 
 
 
@@ -121,8 +124,9 @@ function Landing(){
                             animate={{opacity: 1}}
                             exit={{opacity: 0}}
                             transition={{duration: .3}}
+                            
                             >
-                                <Image src={currentImage} alt='/'width={426}/>
+                                <Image className="rounded-lg" src={currentImage} alt='/'width={426}/>
                             </motion.div>
                         </AnimatePresence>
                         
@@ -137,9 +141,9 @@ function Landing(){
                 </div>
                 <div className="flex justify-between mt-4">
 
-                <button className="bg-green-400 p-2" onClick={nextProfesonal}>Professonal</button>
-                <button className="bg-green-400 p-2" onClick={resetAboutMe}>Restart</button>
-                <button className="bg-green-400 p-2" onClick={nextPersonal}>Personal</button>
+                <button className=" p-2 w-32 bg-stone-600 rounded-xl border-sky-600 shadow-r-2xl" onClick={nextProfesonal}>Professonal</button>
+                <button className=" p-2 w-32 bg-stone-600 rounded-xl border-sky-600 shadow-r-2xl" onClick={resetAboutMe}><FontAwesomeIcon icon={faRotateLeft} /></button>
+                <button className=" p-2 w-32 bg-stone-600 rounded-xl border-sky-600 shadow-r-2xl" onClick={nextPersonal}>Personal</button>
                 </div>
 
                 </div>
