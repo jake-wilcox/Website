@@ -1,6 +1,7 @@
 import Image from "next/image"
 import React, { useState } from "react"
 import Navbar from "../components/Navbar"
+import Logo from "../components/Logo"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -58,24 +59,24 @@ function Landing(){
 
     return (
         <div>
-            <div className="grid place-items-center  mt-80">
-                <div className="w-8/12 p-5 pb-40 flex fixed top-2/4 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0">
-                    <div className=" text-6xl text-cyan-100 flex-1">
-                        <p>JW</p>
+            <div className="grid place-items-center  mt-80 p-5">
+                <div className="w-8/12 p-5 pb-40 flex top-2/4 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 fixed">
+                    <div className="flex-1 flex justify-center ">
+                        <Logo/>
                     </div>
-                    <div className="text-l text-sky-100 flex-1">
-                        <p>bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal bla bla bal</p>
+                    <div className="flex-1 text-l text-white  flex justify-center items-center">
+                        <p>Welcome to my personal website! Have a look around and when youre done, consider signing the visitors page! Enjoy</p>
                     </div>
                 </div>
             </div>
         
 
-            <div className=" bg-stone-900 relative z-10 text-cyan-100 mt-36" >
+            <div className=" bg-dankBlue-900 relative z-10 text-white mt-36" >
 
 
                 <Navbar/>
 
-                <div className=" mt-96 mx-40 p-10 bg-stone-800 rounded-lg">
+                <div className=" mt-96 mx-40 p-10 bg-dankBlue-800 rounded-lg">
 
                 <div className="flex">
 

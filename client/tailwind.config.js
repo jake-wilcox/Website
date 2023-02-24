@@ -6,6 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'dankBlue-900': '#030136',
+        'dankBlue-800': '#1c1a4a',
+        'dankBlue-700' : '#35345e'
+
+
+      },
       boxShadow: {
         'r-3xl': '2px 4px 2px 0px rgba(0, 0, 0, 0.7)',
       }

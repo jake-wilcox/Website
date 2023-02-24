@@ -13,7 +13,7 @@ export default function Document() {
       
       
    
-      <body className='bg-stone-900 m-0 p-0'>
+      <body className='bg-dankBlue-900 m-0 p-0'>
         <Main />
         <NextScript />
       </body>
