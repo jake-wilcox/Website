@@ -65,7 +65,7 @@ function Landing(){
                         <Logo/>
                     </div>
                     <div className="flex-1 text-l text-white  flex justify-center items-center">
-                        <p>Welcome to my personal website! Have a look around and when youre done, consider signing the visitors page! Enjoy</p>
+                        <p>Welcome to my personal website! Have a look around and when you're done, consider signing the visitors page! Enjoy. 😃</p>
                     </div>
                 </div>
             </div>
