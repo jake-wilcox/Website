@@ -14,7 +14,7 @@ function Navbar(){
                 <Link href={'/'} className="flex-1 text-center bg-dankBlue-700 p-2 border-y-2 border-r-2  border-white shadow-r-3xl">
                     about me
                 </Link>
-                <Link href={'/'} className="flex-1 text-center bg-dankBlue-700 p-2 border-y-2  border-white shadow-r-3xl">
+                <Link href={'/Projects'} className="flex-1 text-center bg-dankBlue-700 p-2 border-y-2  border-white shadow-r-3xl">
                     Projects
                 </Link>
                 <Link href="/Test" className="flex-1 text-center bg-dankBlue-700 p-2 rounded-r-full border-2  border-white shadow-r-3xl" >
