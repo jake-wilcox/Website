@@ -9,7 +9,8 @@ module.exports = {
       colors: {
         'dankBlue-900': '#030136',
         'dankBlue-800': '#1c1a4a',
-        'dankBlue-700' : '#35345e'
+        'dankBlue-700' : '#35345e',
+        'dankBlue-600' : '#4f4d72'
 
 
       },

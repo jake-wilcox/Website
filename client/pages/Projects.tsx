@@ -16,12 +16,11 @@ function Projects() {
         </div>
 
 
-
-      <div className='flex flex-auto bg-yellow-200 pt-24'>
+      <div className='flex flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white'>
 
         <div className='flex-1 '>
 
-        <h1 className='text-4xl'>Personal Website</h1>
+        <h1 className='text-4xl'>Overview</h1>
         </div>
         <div className='flex-1'>
         <StackCanvas/>
