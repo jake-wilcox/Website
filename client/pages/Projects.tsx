@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import ProjectsSidebar from '../components/ProjectsSidebar';
 import StackCanvas from '../components/StackCanvas';
+import Backdrop from '../components/Backdrop';
 
 
 function Projects() {
@@ -9,6 +10,7 @@ function Projects() {
     <div>
 
       <Navbar/>
+      
 
     <div className='flex'>
         <div className='flex-none w-2/12 m-5'>
