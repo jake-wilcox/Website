@@ -1,12 +1,16 @@
 import React from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion} from "framer-motion"
 import { useEffect, useState} from "react";
 
+type Props = {
+    proficentcy: number
+}
 
-const ProgressBar = ({Proficentcy}) => {
 
-    const proficentcyPx = (Proficentcy / 10) * 300
+const ProgressBar = ({proficentcy}: Props) => {
+
+    const proficentcyPx = (proficentcy / 10) * 300
 
     return (
 

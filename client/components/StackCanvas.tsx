@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPython } from '@fortawesome/free-brands-svg-icons'
@@ -185,6 +185,9 @@ function StackCanvas(){
         return cubeSize
     }
 
+    type handleClose = { 
+        onClick: (event: React.MouseEvent<HTMLElement>) => void
+      };
 
     const cubeSize= makePyramad()
 
@@ -201,11 +204,15 @@ function StackCanvas(){
     return (
         <div>
         <div className='bg-dankBlue-700 w-[400px] h-[400px] rounded-md shadow-lg'>
+        <AnimatePresence>
+
             {isOpen && <LanguageModal data={data} handleClose={toggleOpen}/>}
+            </AnimatePresence>
 
             {
 
                 stack.map((stack, i) => (
+                    
 
                     
                     <motion.div initial={stack.cords[0]} animate={stack.cords[1]} transition={{duration: 2, type:'spring', bounce: .2, delay: i * .2}}

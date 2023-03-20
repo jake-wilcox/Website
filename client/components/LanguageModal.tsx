@@ -1,12 +1,28 @@
 import React from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState} from "react";
 import ProgressBar from "./ProgressBar";
 
+type Props = {
+    handleClose: React.MouseEventHandler<HTMLButtonElement>;
+    data:{
+        name: string;
+        svgPath: string;
+        svgViewbox: string;
+        description: string;
+        cords: {}[];
+        proficiency: number;
+    },
+  };
+  
 
-const LanguageModal = ({handleClose, data}) => {
-    return (
+const LanguageModal = ({handleClose, data}: Props) => {
+
+        return(
+
+
+            
         <motion.div className="absolute w-[400px] h-[400px] rounded-md bg-black bg-opacity-60 z-10 backdrop-blur-sm"
         initial={{opacity: 0}}
         animate= {{opacity: 1}}
@@ -22,7 +38,7 @@ const LanguageModal = ({handleClose, data}) => {
             <p>Description</p>
             <p>Projects using {data.name}</p>
             <p>Proficentcy</p>
-            <ProgressBar Proficentcy={data.proficiency}/>
+            <ProgressBar proficentcy={data.proficiency}/>
 
             </div>
             <button onClick={handleClose}>close</button>
