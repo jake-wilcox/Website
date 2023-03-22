@@ -3,6 +3,11 @@ import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState} from "react";
 import ProgressBar from "./ProgressBar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+
+
+
 
 type Props = {
     handleClose: React.MouseEventHandler<HTMLButtonElement>;
@@ -30,18 +35,19 @@ const LanguageModal = ({handleClose, data}: Props) => {
         >
             <div className="m-10">
 
-            <div className="flex bg-black items-center space-x-4">
+            <div className="flex items-center space-x-4">
 
             <svg className=''xmlns="http://www.w3.org/2000/svg" width='20%' height='20%' stroke='#CB9F1F' fill='#CB9F1F' viewBox={data.svgViewbox}><path d={data.svgPath}/></svg>
             <h1 className='text-3xl'>{data.name}</h1>
             </div>
-            <p>Description</p>
-            <p>Projects using {data.name}</p>
-            <p>Proficentcy</p>
+
+            <p className="text-lg mt-5">Description</p>
+            <p>{data.description}</p>
+            <p className="text-lg mt-5">Proficentcy: {data.proficiency}/10</p>
             <ProgressBar proficentcy={data.proficiency}/>
 
             </div>
-            <button onClick={handleClose}>close</button>
+            <button className=" absolute top-4 right-4" onClick={handleClose}><FontAwesomeIcon icon={faXmark} /></button>
 
 
 
