@@ -9,7 +9,7 @@ import { faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 
 import parse from 'html-react-parser'
 
-import { kaya, homoners, fam, jobs, simMeeting } from '../public'
+import { kaya, homoners, fam, jobs, simMeeting } from '../public/photos'
 
 function Landing(){
 
