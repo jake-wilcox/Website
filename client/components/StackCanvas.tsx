@@ -31,7 +31,7 @@ function StackCanvas({ stack }) {
 
     let languageIndx = 0;
     for (let i = 0; i < layers.length; i++) {
-      let yCord = width - (1 + i) * cubeSize - 5 * i;
+      let yCord = (width - (1 + i) * cubeSize - 5 * i) - spacing*.5 ;
       for (let j = 0; j < layers[i]; j++) {
         var xCord = initialSpace + spacing * j + cubeSize * j;
         stack[languageIndx].cords = [
