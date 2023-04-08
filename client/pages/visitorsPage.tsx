@@ -5,10 +5,14 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 // You can use provided image shipped by this package or using your own
 import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
 
-function Test() {
+
+
+function visitorsPage() {
+    console.log(`${typeof window === 'object' && window.location.origin}/linkedin`)
   const { linkedInLogin } = useLinkedIn({
-    clientId: '86vhj2q7ukf83q',
+    clientId: '8616f1wje7jmk6',
     redirectUri: `${typeof window === 'object' && window.location.origin}/linkedin`,
+    scope: 'r_liteprofile r_emailaddress',
     onSuccess: (code) => {
       console.log(code);
     },
@@ -30,4 +34,4 @@ function Test() {
 
   );
 }
-export default Test
+export default visitorsPage

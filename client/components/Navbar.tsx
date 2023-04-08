@@ -27,7 +27,7 @@ function Navbar() {
           Projects
         </Link>
         <Link
-          href="/Test"
+          href="/visitorsPage"
           className="flex-1 text-center bg-dankBlue-700 p-2 rounded-r-full border-2  border-white shadow-r-3xl"
         >
           Visitors Page
