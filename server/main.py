@@ -18,5 +18,5 @@ def read_root():
     return{'hello': 'world'}
 
 @app.post("/api/addProfile")
-def add_profile(profile):
+async def add_profile(profile):
     return 1
