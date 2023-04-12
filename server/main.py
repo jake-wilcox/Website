@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-
 app = FastAPI()
 
-origins = ['https://localhost:3000']
+origins = ['https://localhost:3000',
+           'http://localhost:3000']
 app.add_middleware(
     CORSMiddleware,
     allow_origins = origins,
@@ -12,11 +12,17 @@ app.add_middleware(
     allow_methods = ['*'],
     allow_headers = ['*'], 
     )
+from database import(
+    exchange_code    
+)
 
 @app.get("/")
 def read_root():
     return{'hello': 'world'}
 
-@app.post("/api/addProfile")
-async def add_profile(profile):
+@app.get("/api/addSignature/")
+async def add_sig(code: str):
+    print(code)
+    token = await exchange_code(code)
+
     return 1
