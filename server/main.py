@@ -13,7 +13,8 @@ app.add_middleware(
     allow_headers = ['*'], 
     )
 from database import(
-    exchange_code    
+    exchange_code,    
+    get_user
 )
 
 @app.get("/")
@@ -24,5 +25,10 @@ def read_root():
 async def add_sig(code: str):
     print(code)
     token = await exchange_code(code)
+    print('token from addsig function')
+    print(token['access_token'])
+    print(type(token))
+    user_info = await get_user(token['access_token'])
 
+    print(user_info)
     return 1
