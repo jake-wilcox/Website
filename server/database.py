@@ -45,6 +45,4 @@ async def get_user(access_token):
 
 # https://api.linkedin.com/v2/me?projection=(id,profilePicture(displayImage~:playableStreams))&oauth2_access_token=HERE
 
- 
-
 
