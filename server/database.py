@@ -1,6 +1,7 @@
 import requests
 from dotenv import load_dotenv
 import os
+import base64
 load_dotenv()
 
 
@@ -28,7 +29,7 @@ async def exchange_code(code):
     return data
 
 
-async def get_user(access_token):
+async def get_name(access_token):
     #exchanging our access token for user info
     user_info = requests.get(
     'https://api.linkedin.com/v2/me',
@@ -40,9 +41,22 @@ async def get_user(access_token):
         # Any other needed HTTP headers go here
     },
     ).json()
-
+    
     print(user_info)
+    return user_info
 
-# https://api.linkedin.com/v2/me?projection=(id,profilePicture(displayImage~:playableStreams))&oauth2_access_token=HERE
+async def get_photo(access_token):
+    photo_info = requests.get(
+            'https://api.linkedin.com/v2/me?projection=(profilePicture(displayImage~:playableStreams))&oauth2_access_token=' + access_token
+            ).json()
+    # changing the first index to 0 = smaller image and 1 = bigger image
+    photo_link = photo_info['profilePicture']['displayImage~']['elements'][0]['identifiers'][0]['identifier']
+
+    response = requests.get(photo_link)
+    photo = response.content
+    
+    incoded_photo = base64.b64encode(photo)
+    print()
+    print(incoded_photo.decode('utf-8'))
 
 

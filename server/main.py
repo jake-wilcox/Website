@@ -14,7 +14,8 @@ app.add_middleware(
     )
 from database import(
     exchange_code,    
-    get_user
+    get_name,
+    get_photo,
 )
 
 @app.get("/")
@@ -28,7 +29,9 @@ async def add_sig(code: str):
     print('token from addsig function')
     print(token['access_token'])
     print(type(token))
-    user_info = await get_user(token['access_token'])
-
-    print(user_info)
+    user_name = await get_name(token['access_token'])
+    user_photo = await get_photo(token['access_token'])
+    
+    #print(user_name)
+    print(user_photo)
     return 1
