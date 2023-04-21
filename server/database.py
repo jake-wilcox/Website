@@ -57,6 +57,7 @@ async def get_photo(access_token):
     
     incoded_photo = base64.b64encode(photo)
     print()
-    print(incoded_photo.decode('utf-8'))
-
+    return incoded_photo.decode('utf-8')
+      
+    
 

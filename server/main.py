@@ -31,7 +31,14 @@ async def add_sig(code: str):
     print(type(token))
     user_name = await get_name(token['access_token'])
     user_photo = await get_photo(token['access_token'])
+
+    user_info = {'first_name': user_name['firstName']['localized']['en_US'],
+                 'last_name': user_name['lastName']['localized']['en_US'],
+                 'photo': user_photo,
+                 }
     
-    #print(user_name)
-    print(user_photo)
-    return 1
+    # print(user_name)
+    # print(user_photo)
+
+    print(user_info)
+    return user_info
