@@ -50,6 +50,8 @@ async def get_photo(access_token):
             'https://api.linkedin.com/v2/me?projection=(profilePicture(displayImage~:playableStreams))&oauth2_access_token=' + access_token
             ).json()
     # changing the first index to 0 = smaller image and 1 = bigger image
+    print()
+    print( photo_info['profilePicture']['displayImage~']['elements'][0])
     photo_link = photo_info['profilePicture']['displayImage~']['elements'][0]['identifiers'][0]['identifier']
 
     response = requests.get(photo_link)
