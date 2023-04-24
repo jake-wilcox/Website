@@ -12,23 +12,23 @@ app.add_middleware(
     allow_methods = ['*'],
     allow_headers = ['*'], 
     )
+from model import Signature
+
 from database import(
     exchange_code,    
     get_name,
     get_photo,
+    fetch_all_signatures,
+    save_signature,
 )
 
 @app.get("/")
 def read_root():
     return{'hello': 'world'}
 
-@app.get("/api/addSignature/")
-async def add_sig(code: str):
-    print(code)
+@app.get("/api/getUser/")
+async def get_user(code: str):
     token = await exchange_code(code)
-    print('token from addsig function')
-    print(token['access_token'])
-    print(type(token))
     user_name = await get_name(token['access_token'])
     user_photo = await get_photo(token['access_token'])
 
@@ -42,3 +42,21 @@ async def add_sig(code: str):
 
     print(user_info)
     return user_info
+
+
+@app.post("/api/addSignature")
+async def add_sig(data: Signature):
+    print('adding signature')
+    print(data)
+    res = await save_signature(data) 
+
+    
+
+@app.get("/test")
+async def test():
+    print('inside test function')
+    s = await fetch_all_signatures()
+    print(s)
+
+
+

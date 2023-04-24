@@ -11,7 +11,7 @@ const VisitorsModal = ({ isVisable, token }) => {
 
         async function makePost() {
             console.log('fetching')
-            const response = await axios.get('http://localhost:8000/api/addSignature', { params: { 'code': token } });
+            const response = await axios.get('http://localhost:8000/api/getUser', { params: { 'code': token } });
             setData(response.data)
         }
         console.log('inside use effect')
@@ -35,7 +35,7 @@ const VisitorsModal = ({ isVisable, token }) => {
                         <img className="rounded-full" src={`data:image/jpeg;base64,${data.photo}`} alt="User Profile" />
                     </div>
                 </div>
-                <form action="http://localhost:8000/api/sign" method="post">
+                <form action="http://localhost:8000/api/addSignature" method="post">
                     <input className="w-full mt-5 p-7 bg-dankBlue-600 rounded-lg " type="text" id="comment" name="comment" placeholder="add a comment!" />
                     <button className="mt-5 p-3 border-black border-4 rounded-lg" type="submit">Submit</button>
                 </form>

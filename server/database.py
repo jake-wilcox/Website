@@ -2,10 +2,16 @@ import requests
 from dotenv import load_dotenv
 import os
 import base64
+from model import Signature
 load_dotenv()
 
+import motor.motor_asyncio
+client = motor.motor_asyncio.AsyncIOMotorClient(os.getenv('MONGO_CONNECTION'))
+database= client.Website
+collection = database.Signatures
 
 
+# Pre database functions ------------------------------------------------------------------------------------------------------------------------------------
 async def exchange_code(code):
 
     print('inside exchange code function')
@@ -60,6 +66,20 @@ async def get_photo(access_token):
     incoded_photo = base64.b64encode(photo)
     print()
     return incoded_photo.decode('utf-8')
-      
+
+# Database funcitons --------------------------------------------------------------------------------------------------------------------------
+
+async def save_signature(sig):
+    document = sig
+    result = await collection.insert_one(document)
+    return result
+
+async def fetch_all_signatures():
+    sigs = []
+    cursor = collection.find({})
+    async for document in cursor:
+        sigs.append(Signature(**document))
+    return sigs
+
     
 

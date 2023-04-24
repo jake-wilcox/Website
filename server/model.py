@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-class Code(BaseModel):
-    code: str
-    state: str
+class Signature(BaseModel):
+    fname: str
+    lname: str
+    img: str
+    comment: str
