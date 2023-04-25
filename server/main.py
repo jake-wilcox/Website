@@ -44,11 +44,17 @@ async def get_user(code: str):
     return user_info
 
 
-@app.post("/api/addSignature")
+@app.post("/api/addSignature", response_model=Signature)
 async def add_sig(data: Signature):
     print('adding signature')
-    print(data)
-    res = await save_signature(data) 
+    
+    
+    res = await save_signature(data.dict())
+    if res:
+        return res
+    raise HTTPException(400, "something went wrong :/")
+    return res
+
 
     
 
@@ -56,7 +62,7 @@ async def add_sig(data: Signature):
 async def test():
     print('inside test function')
     s = await fetch_all_signatures()
-    print(s)
+    return s
 
 
 

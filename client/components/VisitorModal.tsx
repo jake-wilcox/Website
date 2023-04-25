@@ -5,6 +5,7 @@ const VisitorsModal = ({ isVisable, token }) => {
     if (!isVisable) return null;
 
     const [data, setData] = useState({})
+    const [comment, setComment] = useState()
     const isFetched = useRef(false)
 
     useEffect(() => {
@@ -24,6 +25,19 @@ const VisitorsModal = ({ isVisable, token }) => {
     }, []);
 
 
+    const addSigHandeler = async () => {
+        console.log('adding signature')
+        const response = await axios.post('http://localhost:8000/api/addSignature',
+            {
+                'fname': data.first_name,
+                'lname': data.last_name,
+                'img': data.photo,
+                'comment': comment,
+            })
+        console.log(response)
+    }
+
+
 
 
     return (
@@ -35,10 +49,8 @@ const VisitorsModal = ({ isVisable, token }) => {
                         <img className="rounded-full" src={`data:image/jpeg;base64,${data.photo}`} alt="User Profile" />
                     </div>
                 </div>
-                <form action="http://localhost:8000/api/addSignature" method="post">
-                    <input className="w-full mt-5 p-7 bg-dankBlue-600 rounded-lg " type="text" id="comment" name="comment" placeholder="add a comment!" />
-                    <button className="mt-5 p-3 border-black border-4 rounded-lg" type="submit">Submit</button>
-                </form>
+                <input className="w-full mt-5 p-7 bg-dankBlue-600 rounded-lg " type="text" placeholder="add a comment!" onChange={event => setComment(event.target.value)} />
+                <button className="mt-5 p-3 border-black border-4 rounded-lg" onClick={addSigHandeler}>Submit</button>
             </div>
         </div>
     );

@@ -71,8 +71,11 @@ async def get_photo(access_token):
 
 async def save_signature(sig):
     document = sig
+    print(document)
+    print(type(document))
     result = await collection.insert_one(document)
-    return result
+    print(result)
+    return document
 
 async def fetch_all_signatures():
     sigs = []
