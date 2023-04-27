@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -31,10 +31,12 @@ async def get_user(code: str):
     token = await exchange_code(code)
     user_name = await get_name(token['access_token'])
     user_photo = await get_photo(token['access_token'])
+    print(user_name)
 
     user_info = {'first_name': user_name['firstName']['localized']['en_US'],
                  'last_name': user_name['lastName']['localized']['en_US'],
                  'photo': user_photo,
+                 'full_name': user_name['firstName']['localized']['en_US']+user_name['lastName']['localized']['en_US'],
                  }
     
     # print(user_name)
@@ -48,21 +50,19 @@ async def get_user(code: str):
 async def add_sig(data: Signature):
     print('adding signature')
     
-    
+    print(data.dict()) 
     res = await save_signature(data.dict())
-    if res:
-        return res
-    raise HTTPException(400, "something went wrong :/")
+   # if res:
+    #    return res
+    # print('no response. could be duplacate')
+    #raise HTTPException(400, "something went wrong :/")
     return res
 
-
     
 
-@app.get("/test")
+@app.get("/api/getSignatures")
 async def test():
     print('inside test function')
     s = await fetch_all_signatures()
     return s
-
-
 

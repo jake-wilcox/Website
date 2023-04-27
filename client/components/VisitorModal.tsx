@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
-const VisitorsModal = ({ isVisable, token }) => {
-    if (!isVisable) return null;
+const VisitorsModal = ({ toggleVisable, token }) => {
 
     const [data, setData] = useState({})
     const [comment, setComment] = useState()
@@ -29,12 +28,14 @@ const VisitorsModal = ({ isVisable, token }) => {
         console.log('adding signature')
         const response = await axios.post('http://localhost:8000/api/addSignature',
             {
+                'fullname': data.full_name,
                 'fname': data.first_name,
                 'lname': data.last_name,
                 'img': data.photo,
                 'comment': comment,
             })
         console.log(response)
+        toggleVisable();
     }
 
 
@@ -52,7 +53,7 @@ const VisitorsModal = ({ isVisable, token }) => {
                 <input className="w-full mt-5 p-7 bg-dankBlue-600 rounded-lg " type="text" placeholder="add a comment!" onChange={event => setComment(event.target.value)} />
                 <button className="mt-5 p-3 border-black border-4 rounded-lg" onClick={addSigHandeler}>Submit</button>
             </div>
-        </div>
+        </div >
     );
 }
 export default VisitorsModal
