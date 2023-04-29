@@ -13,7 +13,7 @@ const visitorsPage = () => {
 
     const [isVisable, setIsVisable] = useState(false)
     const [token, setToken] = useState('')
-    const [signatures, setSignatures] = useState([])
+    const [signatures, setSignatures] = useState()
 
     const toggleModal = () => {
         setIsVisable(!isVisable)
@@ -25,7 +25,7 @@ const visitorsPage = () => {
         async function getSigs() {
             const signatures = await axios.get('http://localhost:8000/api/getSignatures')
             console.log(signatures)
-            setSignatures(signatures)
+            setSignatures(signatures.data)
         }
 
         getSigs();
@@ -50,9 +50,21 @@ const visitorsPage = () => {
 
 
     const chunkArray = (arr, n) => {
+        signatures.unshift({ 'fname': 'sign the page with linkedin' })
+        console.log('chunking')
+        // figureing out how many blank cards to add at the end
+        const blanks = n - (arr.length % n)
+
+
         const array = arr.slice()
         const chunks = []
-        while (array.length) chunks.push(array.splice(0, n))
+
+        while (array.length) {
+            console.log(array.length)
+            chunks.push(array.splice(0, n))
+
+        }
+        console.log(chunks)
         return chunks
     }
 
@@ -73,8 +85,16 @@ const visitorsPage = () => {
             {isVisable && <VisitorsModal toggleVisable={toggleModal} token={token} />}
             <div>
 
-
-
+                {signatures && chunkArray(signatures, 3).map((row, i) => (
+                    <div key={i} className="flex">
+                        {row.map((col, i) => (
+                            <div key={i} className="flex-1 bg-white m-5">
+                                {col.fname}
+                                {col.lname}
+                            </div>
+                        ))}
+                    </div>
+                ))}
 
             </div>
         </div>
