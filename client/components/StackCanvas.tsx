@@ -1,11 +1,23 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPython } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
 import LanguageModal from "./LanguageModal";
 
-function StackCanvas({ stack }) {
+
+type Language = {
+    name: string;
+    svgPath: string;
+    svgViewbox: string;
+    description: string;
+    cords: {}[];
+    proficiency: number;
+};
+
+type Props = {
+    stack: Language[];
+};
+
+function StackCanvas({ stack }: Props) {
     console.log(stack);
 
     const makePyramad = () => {
