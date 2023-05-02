@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
-const VisitorsModal = ({ toggleVisable, token }) => {
+const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
 
     const [data, setData] = useState({})
     const [comment, setComment] = useState()
@@ -10,9 +10,16 @@ const VisitorsModal = ({ toggleVisable, token }) => {
     useEffect(() => {
 
         async function makePost() {
-            console.log('fetching')
-            const response = await axios.get('http://localhost:8000/api/getUser', { params: { 'code': token } });
-            setData(response.data)
+            try {
+                console.log('fetching')
+                const response = await axios.get('http://localhost:8000/api/getUser', { params: { 'code': token } });
+                setData(response.data)
+            }
+            catch (error) {
+                console.log(error)
+                errorNotification()
+
+            }
         }
         console.log('inside use effect')
         if (isFetched.current) {
@@ -26,16 +33,24 @@ const VisitorsModal = ({ toggleVisable, token }) => {
 
     const addSigHandeler = async () => {
         console.log('adding signature')
-        const response = await axios.post('http://localhost:8000/api/addSignature',
-            {
-                'fullname': data.full_name,
-                'fname': data.first_name,
-                'lname': data.last_name,
-                'img': data.photo,
-                'comment': comment,
-            })
-        console.log(response)
-        toggleVisable();
+
+        try {
+            const response = await axios.post('http://localhost:8000/api/addSignature',
+                {
+                    'fullname': data.full_name,
+                    'fname': data.first_name,
+                    'lname': data.last_name,
+                    'img': data.photo,
+                    'comment': comment,
+                })
+            console.log(response)
+        }
+        catch (error) {
+            console.log(error)
+            errorNotification()
+        }
+
+        toggleVisable()
     }
 
 
@@ -50,7 +65,7 @@ const VisitorsModal = ({ toggleVisable, token }) => {
                         <img className="rounded-full" src={`data:image/jpeg;base64,${data.photo}`} alt="User Profile" />
                     </div>
                 </div>
-                <input className="w-full mt-5 p-7 bg-dankBlue-600 rounded-lg " type="text" placeholder="add a comment!" onChange={event => setComment(event.target.value)} />
+                <input className="w-full mt-5 p-7 bg-dankBlue-600 rounded-lg break-words" type="text" placeholder="add a comment!" maxLength={110} onChange={event => setComment(event.target.value)} />
                 <button className="mt-5 p-3 border-black border-4 rounded-lg" onClick={addSigHandeler}>Submit</button>
             </div>
         </div >
