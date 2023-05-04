@@ -16,7 +16,11 @@ function Projects() {
 
                 <div className="flex flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
                     <div className="flex-1 ">
-                        <h1 className="text-4xl">Overview</h1>
+                        <h1 className="text-4xl mb-3">Overview</h1>
+                        Ever since I took my first steps in programming, I have loved the process of building projects. Whether I am creating software to solve a
+                        problem in my life or just familiarizing myself with a new technology or language, every project has helped me grow as a developer.
+                        <br /><br />
+                        To the right is my tech stack. <span className='text-dankRed'>click on a square</span> to see a brief summary of the language as well as my proficiency level.
                     </div>
                     <div className="flex-1 flex justify-center">
                         <StackCanvas
