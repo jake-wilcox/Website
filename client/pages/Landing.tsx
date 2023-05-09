@@ -154,7 +154,7 @@ function Landing() {
                     </div>
                     <div className="flex justify-between mt-4">
 
-                        <button className=" p-2 w-32 bg-stone-600 rounded-xl border-sky-600 shadow-r-2xl" onClick={nextProfesonal}>Professonal</button>
+                        <button className=" p-2 w-32 bg-stone-600 rounded-xl border-sky-600 shadow-r-2xl" onClick={nextProfesonal}>Professional</button>
                         <button className=" p-2 w-32 bg-stone-600 rounded-xl border-sky-600 shadow-r-2xl" onClick={resetAboutMe}><FontAwesomeIcon icon={faRotateLeft} /></button>
                         <button className=" p-2 w-32 bg-stone-600 rounded-xl border-sky-600 shadow-r-2xl" onClick={nextPersonal}>Personal</button>
                     </div>
