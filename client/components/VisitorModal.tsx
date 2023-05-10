@@ -2,10 +2,31 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 
-const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
+interface props {
+    toggleVisable: () => void;
+    token: string;
+    errorNotification: () => void;
+}
 
-    const [data, setData] = useState({})
-    const [comment, setComment] = useState()
+
+interface sigData {
+    first_name: string
+    last_name: string
+    full_name: string
+    photo: string
+
+}
+
+
+
+
+
+
+
+const VisitorsModal = ({ toggleVisable, token, errorNotification }: props) => {
+
+    const [data, setData] = useState<sigData>({ first_name: '', last_name: '', full_name: '', photo: '' })
+    const [comment, setComment] = useState('')
     const isFetched = useRef(false)
 
     useEffect(() => {
@@ -19,6 +40,7 @@ const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
             catch (error) {
                 console.log(error)
                 errorNotification()
+                toggleVisable()
 
             }
         }
@@ -36,6 +58,9 @@ const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
         console.log('adding signature')
 
         try {
+
+
+
             const response = await axios.post('http://localhost:8000/api/addSignature',
                 {
                     'fullname': data.full_name,
@@ -50,7 +75,6 @@ const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
             console.log(error)
             errorNotification()
         }
-
         toggleVisable()
     }
 
