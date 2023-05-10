@@ -18,7 +18,6 @@ type Props = {
 };
 
 function StackCanvas({ stack }: Props) {
-    console.log(stack);
 
     const makePyramad = () => {
         let width = 400;
@@ -96,7 +95,7 @@ function StackCanvas({ stack }: Props) {
                         onClick={() => {
                             toggleOpen();
                             setData(stack);
-                            console.log(stack);
+                            // console.log(stack);
                         }}
                     >
                         <svg
