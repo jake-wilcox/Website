@@ -81,6 +81,7 @@ function StackCanvas({ stack }: Props) {
                 {stack.map((stack, i) => (
                     <motion.div
                         initial={stack.cords[0]}
+                        key={i}
                         animate={stack.cords[1]}
                         transition={{
                             duration: 2,

@@ -66,7 +66,7 @@ function Landing() {
                         <Logo />
                     </div>
                     <div className="flex-1 text-l text-white  flex justify-center items-center">
-                        <p>Welcome to my personal website! Have a look around and when you're done, consider signing the visitors page! Enjoy. 😃</p>
+                        <p>Welcome to my personal website! Have a look around and when you&apos;re done, consider signing the visitors page! Enjoy. 😃</p>
                     </div>
                 </div>
             </div>
@@ -79,13 +79,13 @@ function Landing() {
 
                 <div id="aboutMe" className=" mt-96 mx-40 p-5 bg-dankBlue-800 rounded-lg">
                     <div className="my-3 py-1">
-                        <a href="https://github.com/jake-wilcox" target="_blank">
+                        <a href="https://github.com/jake-wilcox" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon className="bg-dankBlue-700 h-7 text-dankRed p-2 m-1 rounded-lg" icon={faGithub} />
                         </a>
-                        <a href="https://www.linkedin.com/in/jakewilcox/" target="_blank">
+                        <a href="https://www.linkedin.com/in/jakewilcox/" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon className="bg-dankBlue-700 h-7 text-dankRed p-2 m-1 rounded-lg" icon={faLinkedin} />
                         </a>
-                        <a href="mailto: jakewilcox242@mail.com" target="_blank">
+                        <a href="mailto: jakewilcox242@mail.com" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon className="bg-dankBlue-700 h-7 text-dankRed p-2 m-1 rounded-lg" icon={faEnvelope} />
                         </a>
                     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
 
@@ -28,7 +29,7 @@ const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
         }
         isFetched.current = true
         makePost();
-    }, []);
+    }, [token, errorNotification]);
 
 
     const addSigHandeler = async () => {
@@ -62,7 +63,7 @@ const VisitorsModal = ({ toggleVisable, token, errorNotification }) => {
                 <div className="flex justify-between items-center">
                     <p className="flex-1 text-2xl"> {!!data && data.first_name} {!!data && data.last_name} </p>
                     <div className="flex-1 flex w-16 h-18 justify-end">
-                        <img className="rounded-full" src={`data:image/jpeg;base64,${data.photo}`} alt="User Profile" />
+                        <Image height={100} width={100} className="rounded-full" src={`data:image/jpeg;base64,${data.photo}`} alt="User Profile" />
                     </div>
                 </div>
                 <input className="w-full mt-5 p-7 bg-dankBlue-600 rounded-lg break-words" type="text" placeholder="add a comment!" maxLength={110} onChange={event => setComment(event.target.value)} />

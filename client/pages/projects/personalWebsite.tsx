@@ -41,7 +41,7 @@ function personalWebsite() {
                             it was a bit of a change to use a statically typed language.Additionally, I decided to implement MongoDB as my database for the visitors page content.
                             The simplicity of a document database worked perfectly for my needs.
                             <h2 className="mt-7 text-xl">UI Design</h2>
-                            One thing that sets this project apart from some of my others is the user interface (UI). In other projects, I didn't put much effort into the
+                            One thing that sets this project apart from some of my others is the user interface (UI). In other projects, I didn&apos;t put much effort into the
                             front-end looks and enjoyed focusing more on the back-end. However, for this project, I made a greater effort to make it look good. I learned a
                             lot about vector graphics and utilized the Framer Motion React library. I also tried to get creative with how the information is portrayed, such as with the stack
                             pyramids to the right. Additionally, I had the opportunity to sharpen my Tailwind.css skills and create something that is presentable to the public.

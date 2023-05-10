@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 import VisitorsModal from '../components/VisitorModal';
@@ -9,11 +10,10 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
 // You can use provided image shipped by this package or using your own
-import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
 import CardSkeleton from '../components/CardSkeleton';
 
 
-const visitorsPage = () => {
+const VisitorsPage = () => {
 
     const [isVisable, setIsVisable] = useState(false)
     const [token, setToken] = useState('')
@@ -38,6 +38,7 @@ const visitorsPage = () => {
                 const signatures = await axios.get('http://localhost:8000/api/getSignatures')
                 console.log(signatures)
                 setSignatures(signatures.data)
+                setIsLoading(false)
             }
             catch (error) {
                 console.log(error)
@@ -105,8 +106,7 @@ const visitorsPage = () => {
             <Navbar />
             {isVisable && <VisitorsModal toggleVisable={toggleModal} token={token} errorNotification={usersNotify} />}
             <div>
-                {<CardSkeleton />}
-
+                {isLoading && <CardSkeleton />}
                 {signatures && chunkArray(signatures, 3).map((row, i) => (
 
                     <div key={i} className="flex text-white">
@@ -124,7 +124,7 @@ const visitorsPage = () => {
                                 {!col.firstCard &&
                                     <div>
                                         <div className='flex items-start p-3'>
-                                            {col.img && <img className="rounded-full" src={`data:image/jpeg;base64,${col.img}`} alt="User Profile" />}
+                                            {col.img && <Image className="rounded-full" width={100} height={100} src={`data:image/jpeg;base64,${col.img}`} alt="User Profile" />}
                                             <p className='text-xl p-5'>{col.fname} {col.lname}</p>
                                         </div>
                                         {col.comment && <p className="p-3">{col.comment}</p>}
@@ -140,4 +140,4 @@ const visitorsPage = () => {
 
     );
 }
-export default visitorsPage
+export default VisitorsPage
