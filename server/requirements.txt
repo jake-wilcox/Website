@@ -3,3 +3,4 @@ requests
 uvicorn
 motor
 python-dotenv
+gunicorn
