@@ -25,7 +25,7 @@ async def exchange_code(code):
         'grant_type': 'authorization_code',
         'code': code,
         # This should be same as 'redirect_uri' field value of previous Python script.
-        'redirect_uri': 'http://localhost:3000/linkedin',
+        'redirect_uri': 'https://jake-wilcox.com/linkedin',
         # Client ID of your created application
         'client_id': '8616f1wje7jmk6',
         # Client Secret of your created application
