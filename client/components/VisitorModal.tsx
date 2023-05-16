@@ -34,7 +34,7 @@ const VisitorsModal = ({ toggleVisable, token, errorNotification }: props) => {
         async function makePost() {
             try {
                 console.log('fetching')
-                const response = await axios.get('http://3.143.239.131/api/getUser', { params: { 'code': token } });
+                const response = await axios.get('/api/getUser', { params: { 'code': token } });
                 setData(response.data)
             }
             catch (error) {
@@ -61,7 +61,7 @@ const VisitorsModal = ({ toggleVisable, token, errorNotification }: props) => {
 
 
 
-            const response = await axios.post('http://3.143.239.131/api/addSignature',
+            const response = await axios.post('/api/addSignature',
                 {
                     'fullname': data.full_name,
                     'fname': data.first_name,

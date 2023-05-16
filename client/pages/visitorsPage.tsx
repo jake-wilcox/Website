@@ -35,7 +35,7 @@ const VisitorsPage = () => {
         async function getSigs() {
 
             try {
-                const signatures = await axios.get('http://3.143.239.131/api/getSignatures')
+                const signatures = await axios.get('/api/getSignatures')
                 console.log(signatures)
                 setSignatures(signatures.data)
                 setIsLoading(false)
