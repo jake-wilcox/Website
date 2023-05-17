@@ -14,28 +14,30 @@ function coolGamez() {
                     <ProjectsSidebar />
                 </div>
 
-                <div className="flex flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
-                    <div className="flex-1 ">
-                        <h1 className="text-4xl">Cool Gamez</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
-                            dicta eos autem placeat nobis officia eligendi odit culpa illum
-                            incidunt aut, a vel sit, ea odio hic eaque aliquam perferendis!
-                        </p>
-                    </div>
-                    <div className="flex-1 flex justify-center">
-                        <StackCanvas
-                            stack={[
-                                languages.react,
-                                languages.flask,
-                                languages.mysql,
-                                languages.tailwind,
-                                languages.javaScript,
-                                languages.python
+                <div className="flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
+                    <div className="">
 
+                        <div className="float-right flex justify-center m-5">
+                            <StackCanvas
+                                stack={[
+                                    languages.react,
+                                    languages.flask,
+                                    languages.javaScript,
+                                    languages.python,
+                                    languages.mysql,
+                                    languages.tailwind,
 
-                            ]}
-                        />
+                                ]}
+                            />
+                        </div>
+                        <div className="">
+                            <h1 className="text-4xl mb-3">Cool Gamez</h1>
+                            This page is a work in progress! the stack I used is accurate and I will get around to writing the content soon!
+                            <h2 className="mt-7 text-xl"></h2>
+                            <h2 className="mt-7 text-xl"></h2>
+                            <h2 className="mt-7 text-xl"></h2>
+
+                        </div>
                     </div>
                 </div>
             </div>

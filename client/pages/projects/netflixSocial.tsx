@@ -5,37 +5,39 @@ import StackCanvas from "../../components/StackCanvas";
 import languages from "../../public/LanguageData";
 
 function netflixSocial() {
-  return (
-    <div>
-      <Navbar />
+    return (
+        <div>
+            <Navbar />
 
-      <div className="flex">
-        <div className="flex-none w-2/12 m-5">
-          <ProjectsSidebar />
+            <div className="flex">
+                <div className="flex-none w-2/12 m-5">
+                    <ProjectsSidebar />
+                </div>
+
+                <div className="flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
+                    <div className="">
+
+                        <div className="float-right flex justify-center m-5">
+                            <StackCanvas
+                                stack={[
+                                    languages.python,
+
+                                ]}
+                            />
+                        </div>
+                        <div className="">
+                            <h1 className="text-4xl mb-3">Netflix Social</h1>
+                            This page is a work in progress! the stack I used is accurate and I will get around to writing the content soon!
+                            <h2 className="mt-7 text-xl"></h2>
+                            <h2 className="mt-7 text-xl"></h2>
+                            <h2 className="mt-7 text-xl"></h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div className="flex flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
-          <div className="flex-1 ">
-            <h1 className="text-4xl">Netflix Social</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
-              dicta eos autem placeat nobis officia eligendi odit culpa illum
-              incidunt aut, a vel sit, ea odio hic eaque aliquam perferendis!
-            </p>
-          </div>
-          <div className="flex-1 flex justify-center">
-            <StackCanvas
-              stack={[
-                languages.react,
-                languages.expressjs
-                
-                
-              ]}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 export default netflixSocial;

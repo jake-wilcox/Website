@@ -14,7 +14,7 @@ import { kaya, fam, jobs, simMeeting, cousins, flex, grad, homoners, moo } from 
 
 function Landing() {
 
-    const defaultImage = moo
+    const defaultImage = kaya
     const defaultText = ['About Me', '<p>Hello World! My name is Jake Wilcox. I am 23 Years old and an aspiaring full stack developer.</p> <br><p>To learn more about my personbal life, click the button on the right. If you want to get down to buisness, hit the professional button on the left.</p>']
 
     const personalPhotos = [fam, homoners, cousins, kaya]
