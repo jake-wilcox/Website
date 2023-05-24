@@ -35,7 +35,7 @@ const VisitorsPage = () => {
         async function getSigs() {
 
             try {
-                const signatures = await axios.get('/api/getSignatures')
+                const signatures = await axios.get('https://api.jake-wilcox.com/api/getSignatures')
                 console.log(signatures)
                 setSignatures(signatures.data)
                 setIsLoading(false)
