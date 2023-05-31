@@ -72,11 +72,8 @@ function Landing() {
             </div>
 
 
-            <div className=" bg-dankBlue-900 relative z-10 text-white mt-36 mb-20" >
-
-
+            <div className=" bg-dankBlue-900 relative z-10 text-white mt-36 2xl:mt-72 mb-20" >
                 <Navbar />
-
                 <div id="aboutMe" className=" mt-96 mx-40 p-5 bg-dankBlue-800 rounded-lg">
                     <div className="my-3 py-1">
                         <a href="https://github.com/jake-wilcox" target="_blank" rel="noreferrer">
