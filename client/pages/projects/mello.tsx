@@ -31,10 +31,10 @@ function mello() {
                         <div className="">
                             <h1 className="text-4xl mb-3">Mello</h1>
                             Mello is a platform for Mentors and Mentees to meet and organize their goals and tasks together. This was my scrum
-                            team's final project in our capstone class, and it was our most advanced and polished web app.
+                            team&apos;s final project in our capstone class, and it was our most advanced and polished web app.
                             <h2 className="mt-7 text-xl">About the Stack</h2>
                             The big improvements I made to my stack during this project were express.js, tailwind, and mySQL. Although this
-                            wasn't my first time using these technologies, I feel like I made vast improvements and was able to get a deep understanding of them.
+                            wasn&apos;t my first time using these technologies, I feel like I made vast improvements and was able to get a deep understanding of them.
 
                             <h2 className="mt-7 text-xl">Teamwork</h2>
                             Our team used scrum methodology during this project to organize our tasks, ideas, and projects. It was nice having
