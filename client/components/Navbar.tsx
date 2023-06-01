@@ -6,11 +6,11 @@ import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
     return (
-        <div className="flex justify-center sticky top-0">
-            <div className="flex w-8/12 text-sky-100">
+        <div className="flex justify-center sticky top-0 z-50">
+            <div className="flex w-8/12 text-sky-100 text-xs whitespace-nowrap md:text-sm">
                 <Link
                     href={"/Landing"}
-                    className="flex-2 text-center bg-dankBlue-700 p-2 px-16 rounded-l-full border-2  border-white shadow-r-3xl"
+                    className="flex-2 text-center bg-dankBlue-700 p-2 md:px-9 rounded-l-full border-2  border-white shadow-r-3xl"
                 >
                     <FontAwesomeIcon icon={faHouseChimney} />
                 </Link>

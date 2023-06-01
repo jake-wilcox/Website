@@ -9,15 +9,16 @@ function personalWebsite() {
         <div>
             <Navbar />
 
-            <div className="flex">
-                <div className="flex-none w-2/12 m-5">
+            <div className="md:flex">
+                <div className="flex-none md:w-2/12 md:m-5">
                     <ProjectsSidebar />
                 </div>
 
-                <div className="flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
+                <div className="flex-auto bg-dankBlue-800 mt-24 md:mx-5 md:p-10 rounded-lg text-white">
                     <div className="">
 
-                        <div className="float-right flex justify-center m-5">
+                        <h1 className="text-4xl mb-3">Personal Website</h1>
+                        <div className="md:float-right flex justify-center m-5">
                             <StackCanvas
                                 stack={[
                                     languages.nextjs,
@@ -32,7 +33,6 @@ function personalWebsite() {
                             />
                         </div>
                         <div className="">
-                            <h1 className="text-4xl mb-3">Personal Website</h1>
                             I created this website to showcase myself and my abilities as a programmer. My goal was to incorporate everything I had learned so far and expand my
                             range of languages and techniques. Although it might not be the most polished website out there, I put a lot of time and effort into this web app, and
                             I hope that it shows.

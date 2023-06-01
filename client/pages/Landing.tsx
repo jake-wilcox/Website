@@ -61,7 +61,7 @@ function Landing() {
     return (
         <div>
             <div className="grid place-items-center  mt-80 p-5">
-                <div className="w-8/12 p-5 pb-40 flex top-2/4 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 fixed">
+                <div className="w-8/12 p-5 pb-40 md:flex top-2/4 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 fixed">
                     <div className="flex-1 flex justify-center ">
                         <Logo />
                     </div>
@@ -74,7 +74,7 @@ function Landing() {
 
             <div className=" bg-dankBlue-900 relative z-10 text-white mt-36 2xl:mt-72 mb-20" >
                 <Navbar />
-                <div id="aboutMe" className=" mt-96 mx-40 p-5 bg-dankBlue-800 rounded-lg">
+                <div id="aboutMe" className=" mt-96 mx-2 md:mx-32 lg:mx-40 p-5 bg-dankBlue-800 rounded-lg">
                     <div className="my-3 py-1">
                         <a href="https://github.com/jake-wilcox" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon className="bg-dankBlue-700 h-7 text-dankRed p-2 m-1 rounded-lg" icon={faGithub} />
@@ -87,7 +87,7 @@ function Landing() {
                         </a>
                     </div>
 
-                    <div className="flex">
+                    <div className="md:flex">
 
                         <motion.div
                             initial={{ x: -50, opacity: 0 }}

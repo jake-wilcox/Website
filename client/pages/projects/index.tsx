@@ -14,7 +14,7 @@ function Projects() {
                     <ProjectsSidebar />
                 </div>
 
-                <div className="flex flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
+                <div className="md:flex flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
                     <div className="flex-1 ">
                         <h1 className="text-4xl mb-3">Overview</h1>
                         Ever since I took my first steps in programming, I have loved the process of building projects. Whether I am creating software to solve a
