@@ -14,7 +14,7 @@ function coolGamez() {
                     <ProjectsSidebar />
                 </div>
 
-                <div className="flex-auto bg-dankBlue-800 md:mt-24 md:mx-5 p-2 md:p-10 rounded-lg text-white">>
+                <div className="flex-auto bg-dankBlue-800 md:mt-24 md:mx-5 p-2 md:p-10 rounded-lg text-white">
                     <div className="">
 
                         <h1 className="text-4xl mb-3">Cool Gamez</h1>
