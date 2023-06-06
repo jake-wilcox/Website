@@ -10,15 +10,15 @@ function personalWebsite() {
             <Navbar />
 
             <div className="md:flex">
-                <div className="flex-none md:w-2/12 md:m-5">
+                <div className="md:flex-none md:w-2/12 md:m-5">
                     <ProjectsSidebar />
                 </div>
 
-                <div className="flex-auto bg-dankBlue-800 mt-24 md:mx-5 md:p-10 rounded-lg text-white">
+                <div className="flex-auto bg-dankBlue-800 md:mt-24 md:mx-5 p-2 md:p-10 rounded-lg text-white">
                     <div className="">
 
                         <h1 className="text-4xl mb-3">Personal Website</h1>
-                        <div className="md:float-right flex justify-center m-5">
+                        <div className="md:float-right flex justify-center md:m-5">
                             <StackCanvas
                                 stack={[
                                     languages.nextjs,

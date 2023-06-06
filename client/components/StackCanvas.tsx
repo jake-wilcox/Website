@@ -23,8 +23,8 @@ function StackCanvas({ stack }: Props) {
         let width = 400;
         let base = Math.ceil(0.5 * ((8 * stack.length + 1) ** 0.5 - 1));
         let layers = new Array<number>(base);
-        let cubeSize = Math.round((400 / base) * 0.85);
-        let spacing = Math.round((400 / base) * 0.15);
+        let cubeSize = Math.round((width / base) * 0.85);
+        let spacing = Math.round((width / base) * 0.15);
         let initialSpace = spacing / 2;
         let pointer = 0;
 
@@ -46,7 +46,7 @@ function StackCanvas({ stack }: Props) {
             for (let j = 0; j < layers[i]; j++) {
                 var xCord = initialSpace + spacing * j + cubeSize * j;
                 stack[languageIndx].cords = [
-                    { x: xCord, y: yCord - 200, opacity: 0 },
+                    { x: xCord, y: yCord - (width / 2), opacity: 0 },
                     { x: xCord, y: yCord, opacity: 1 },
                 ];
                 languageIndx++;

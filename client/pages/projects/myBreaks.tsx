@@ -9,15 +9,16 @@ function myBreaks() {
         <div>
             <Navbar />
 
-            <div className="flex">
-                <div className="flex-none w-2/12 m-5">
+            <div className="md:flex">
+                <div className="md:flex-none md:w-2/12 md:m-5">
                     <ProjectsSidebar />
                 </div>
 
-                <div className="flex-auto bg-dankBlue-800 mt-24 mx-5 p-10 rounded-lg text-white">
+                <div className="flex-auto bg-dankBlue-800 md:mt-24 md:mx-5 p-2 md:p-10 rounded-lg text-white">
                     <div className="">
 
-                        <div className="float-right flex justify-center m-5">
+                        <h1 className="text-4xl mb-3">myBreaks</h1>
+                        <div className="md:float-right flex justify-center md:m-5">
                             <StackCanvas
                                 stack={[
                                     languages.reactNative,
@@ -29,7 +30,6 @@ function myBreaks() {
                             />
                         </div>
                         <div className="">
-                            <h1 className="text-4xl mb-3">myBreaks</h1>
                             My Breaks is a mobile application that I made to help me manage the break schedule at my current job at Target. Target takes employee breaks seriously,
                             and managing the breaks of 10 team members at once while still completing my tasks was a challenge. I saw this challenge as an opportunity to improve my coding
                             skills and dive into mobile development, which is something that I had been wanting to do for a while.

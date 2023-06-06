@@ -8,26 +8,27 @@ function ProjectsSidebar() {
 
     return (
         <div className="md:flex md:h-screen md:justify-center">
-            <div className="flex text-xs md:text-sm md:flex-col text-sky-100 bg-dankBlue-700 md:fixed md:top-1/2 md:-translate-y-1/2 m-5 md:p-10 rounded-2xl md:rounded-3xl justify-center items-center">
-                <Link href={"/projects"} className="my-2 mx-2 text-start">
+            <div className="md:flex text-xs md:text-sm md:flex-col text-sky-100 bg-dankBlue-700 md:fixed md:top-1/2 md:-translate-y-1/2 m-3 md:p-10 rounded-2xl md:rounded-3xl p-3">
+                <Link href={"/projects"} className="py-1 px-1 text-start bg-dankBlue-600 rounded-md">
                     Overview
                 </Link>
-                <Link href={"/projects/personalWebsite"} className=" my-2 mx-2">
+                <Link href={"/projects/personalWebsite"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
                     This Website
                 </Link>
-                <Link href={"/projects/myBreaks"} className=" my-2 mx-2 text-start">
+                <Link href={"/projects/myBreaks"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
                     myBreaks
                 </Link>
-                <Link href={"/projects/mello"} className="my-2 mx-2 text-start">
+                <Link href={"/projects/mello"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
                     Mello
                 </Link>
-                <Link href={"/projects/coolGamez"} className="my-2 mx-2 text-start">
+                <div className="visible md:hidden"><br /></div>
+                <Link href={"/projects/coolGamez"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
                     Cool Gamez
                 </Link>
-                <Link href={"/projects/stonkbot"} className="my-2 mx-2 text-start">
+                <Link href={"/projects/stonkbot"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
                     Stonkbot
                 </Link>
-                <Link href={"/projects/netflixSocial"} className="my-2 mx-2 text-start">
+                <Link href={"/projects/netflixSocial"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
                     Netflix Social
                 </Link>
             </div>
