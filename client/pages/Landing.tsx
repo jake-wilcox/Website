@@ -54,10 +54,6 @@ function Landing() {
     }
 
 
-
-
-
-
     return (
         <div>
             <div className="grid place-items-center  mt-80 p-5">

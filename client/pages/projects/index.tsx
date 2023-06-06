@@ -9,8 +9,8 @@ function Projects() {
         <div>
             <Navbar />
 
-            <div className="flex">
-                <div className="flex-none w-2/12 m-5">
+            <div className="md:flex">
+                <div className="md:flex-none md:w-2/12 md:m-5">
                     <ProjectsSidebar />
                 </div>
 
