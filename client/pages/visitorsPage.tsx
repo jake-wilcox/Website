@@ -109,9 +109,9 @@ const VisitorsPage = () => {
                 {isLoading && <CardSkeleton />}
                 {signatures && chunkArray(signatures, 3).map((row, i) => (
 
-                    <div key={i} className="flex text-white">
+                    <div key={i} className="md:flex text-white">
                         {row.map((col: any, i: number) => (
-                            < div key={i} className="flex-1 bg-dankBlue-800 m-7 rounded-md p-3 h-60" >
+                            < div key={i} className="md:flex-1 bg-dankBlue-800 m-7 rounded-md p-3 h-60" >
                                 {col.firstCard &&
                                     <div className='cursor-pointer bg-dankBlue-700 rounded-md h-full flex justify-center items-center flex-col' onClick={linkedInLogin}>
                                         <div>
