@@ -38,7 +38,7 @@ function myBreaks() {
                             I knew I wanted to get some experience using modern javascript frameworks, but I also liked the idea of it being developed natively for our Zebra
                             devices that we use at work. A good option was using React Native because it was the best of both worlds. For the backend i went with Python
                             Flask because it was lightweight and python is my best language.
-                            <h2 className="mt-7 text-xl">The Algorithem</h2>
+                            <h2 className="mt-7 text-xl">The Algorithm</h2>
                             My main focus of this project was  to ensure that all of my team members would get their breaks at optimal times, while still having enough people
                             on the floor to be effective. this required an algorithm that took into account many things such as a team members department, start time, end time,
                             and how much staff we have. All of this information was used calculated the an optimal break schedule.
