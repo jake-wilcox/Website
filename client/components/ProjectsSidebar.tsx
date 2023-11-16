@@ -12,6 +12,9 @@ function ProjectsSidebar() {
                 <Link href={"/projects"} className="py-1 px-1 text-start bg-dankBlue-600 rounded-md">
                     Overview
                 </Link>
+                <Link href={"/projects/gameOfLife"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
+                    Game Of Life
+                </Link>
                 <Link href={"/projects/personalWebsite"} className="p-1 m-0.5 bg-dankBlue-600 rounded-md">
                     This Website
                 </Link>
