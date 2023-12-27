@@ -87,15 +87,15 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
               <h2 className="mt-7 text-xl">Introduction</h2>
               <p>
                 A few years ago while going down the computer science rabbit hole on YouTube, I discovered Conway&apos;s Game of Life - a Zero-Player Game with just three
-                simple rules. If you aren&apos;t already familiar with the game, here is a simple
-                <a className='text-dankRed underline' target='blank' href="https://youtu.be/jvSp6VHt_Pc?t=44"> explanation video</a>.
+                simple rules. If you aren&apos;t already familiar with the game, here is a simple&nbsp;
+                <a className='text-dankRed underline' target='blank' href="https://youtu.be/jvSp6VHt_Pc?t=44">explanation video</a>.
               </p>
               <br />
               <p>
                 How can a zero player game be any fun?? The thing that makes Conway&apos;s Game of Life so intriguing is the complexity that can come from
-                very simple rules. People have spent years building amazing things in the Game of Life like a
-                <a className='text-dankRed underline' target='blank' href='https://www.youtube.com/watch?v=My8AsV7bA94'> Turing machine</a> and even the <a className='text-dankRed underline' target='blank' href='https://www.youtube.com/watch?v=xP5-iIeKXE8'>game of life inside the game of life</a>.
-                (check out those links your mind will be blown)
+                very simple rules. People have spent years building amazing things in the Game of Life like a&nbsp;
+                <a className='text-dankRed underline' target='blank' href='https://www.youtube.com/watch?v=My8AsV7bA94'>Turing machine</a> and even the <a className='text-dankRed underline' target='blank' href='https://www.youtube.com/watch?v=xP5-iIeKXE8'>game of life inside the game of life</a>.
+                (Check out those links, your mind will be blown).
               </p>
               <br />
               <p>
@@ -126,13 +126,13 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
               <p>
                 I feel like the best place to start on this project is to put a grid on the screen. My first reaction is to just use a map function with a bunch of divs.
                 This approach would make styling the grid easy, however I want to make the grid big while still having decent performance. I don&apos;t think my computer would
-                appreciate me rendering thousands of tiny dom elements so that Idea is out.
+                appreciate me rendering thousands of tiny dom elements so that idea is out.
               </p>
               <br />
 
               <p>
 
-                Another approach is to use an HTML canvas. With a canvas, Building and styling our grid will be a little more tricky, however the performance will be
+                Another approach is to use an HTML canvas. With a canvas, building and styling our grid will be a little more tricky, however the performance will be
                 worth it. Also, I would be able to calculate and render our initial base grid only once, then have overlapping canvases that could render all of our
                 changing tiles. Let&apos;s do it this way.
               </p>
