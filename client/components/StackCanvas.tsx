@@ -19,9 +19,11 @@ type Props = {
 
 function StackCanvas({ stack }: Props) {
 
+  const sortedStack = stack.sort((l1, l2) => (l1.proficiency > l2.proficiency) ? 1 : l1.proficiency <= l2.proficiency ? -1 : 0)
+
     const makePyramad = () => {
         let width = 400;
-        let base = Math.ceil(0.5 * ((8 * stack.length + 1) ** 0.5 - 1));
+        let base = Math.ceil(0.5 * ((8 * sortedStack.length + 1) ** 0.5 - 1));
         let layers = new Array<number>(base);
         let cubeSize = Math.round((width / base) * 0.85);
         let spacing = Math.round((width / base) * 0.15);
@@ -33,7 +35,7 @@ function StackCanvas({ stack }: Props) {
         for (let i = 0; i < base; i++) {
             layers[i] = i + 1;
         }
-        while (layers.reduce((a, b) => a + b, 0) > stack.length) {
+        while (layers.reduce((a, b) => a + b, 0) > sortedStack.length) {
             layers[pointer] -= 1;
             pointer += 1;
         }
@@ -45,7 +47,7 @@ function StackCanvas({ stack }: Props) {
             let yCord = (width - (1 + i) * cubeSize - 5 * i) - spacing * .5;
             for (let j = 0; j < layers[i]; j++) {
                 var xCord = initialSpace + spacing * j + cubeSize * j;
-                stack[languageIndx].cords = [
+                sortedStack[languageIndx].cords = [
                     { x: xCord, y: yCord - (width / 2), opacity: 0 },
                     { x: xCord, y: yCord, opacity: 1 },
                 ];
@@ -63,7 +65,7 @@ function StackCanvas({ stack }: Props) {
     const cubeSize = makePyramad();
 
     const [size, setSize] = useState(cubeSize);
-    const [data, setData] = useState(stack[0]);
+    const [data, setData] = useState(sortedStack[0]);
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = () => {
@@ -77,11 +79,11 @@ function StackCanvas({ stack }: Props) {
                     {isOpen && <LanguageModal data={data} handleClose={toggleOpen} />}
                 </AnimatePresence>
 
-                {stack.map((stack, i) => (
+                {sortedStack.map((sortedStack, i) => (
                     <motion.div
-                        initial={stack.cords[0]}
+                        initial={sortedStack.cords[0]}
                         key={i}
-                        animate={stack.cords[1]}
+                        animate={sortedStack.cords[1]}
                         transition={{
                             duration: 2,
                             type: "spring",
@@ -94,8 +96,8 @@ function StackCanvas({ stack }: Props) {
                         style={{ width: `${cubeSize}px`, height: `${cubeSize}px` }}
                         onClick={() => {
                             toggleOpen();
-                            setData(stack);
-                            // console.log(stack);
+                            setData(sortedStack);
+                            // console.log(sortedStack);
                         }}
                     >
                         <svg
@@ -104,9 +106,9 @@ function StackCanvas({ stack }: Props) {
                             height="80%"
                             stroke="#CB9F1F"
                             fill="#CB9F1F"
-                            viewBox={stack.svgViewbox}
+                            viewBox={sortedStack.svgViewbox}
                         >
-                            <path d={stack.svgPath} />
+                            <path d={sortedStack.svgPath} />
                         </svg>
                     </motion.div>
                 ))}
