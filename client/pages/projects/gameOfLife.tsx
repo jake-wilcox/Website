@@ -86,21 +86,21 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
             <div className="">
               <h2 className="mt-7 text-xl">Introduction</h2>
               <p>
-                A few years ago while going down the computer science rabbit hole on YouTube, I discovered Conway's Game of Life - a Zero-Player Game with just three
-                simple rules. If you aren't already familiar with the game, here is a simple
+                A few years ago while going down the computer science rabbit hole on YouTube, I discovered Conway&apos;s Game of Life - a Zero-Player Game with just three
+                simple rules. If you aren&apos;t already familiar with the game, here is a simple
                 <a className='text-dankRed underline' target='blank' href="https://youtu.be/jvSp6VHt_Pc?t=44"> explanation video</a>.
               </p>
               <br />
               <p>
-                How can a zero player game be any fun?? The thing that makes Conway's Game of Life so intriguing is the complexity that can come from
+                How can a zero player game be any fun?? The thing that makes Conway&apos;s Game of Life so intriguing is the complexity that can come from
                 very simple rules. People have spent years building amazing things in the Game of Life like a
                 <a className='text-dankRed underline' target='blank' href='https://www.youtube.com/watch?v=My8AsV7bA94'> Turing machine</a> and even the <a className='text-dankRed underline' target='blank' href='https://www.youtube.com/watch?v=xP5-iIeKXE8'>game of life inside the game of life</a>.
                 (check out those links your mind will be blown)
               </p>
               <br />
               <p>
-                It wasn't till a few weeks ago when I decided to play around with Conway's Game of Life myself. The websites I found were amazing and the performance was unbeatable, however they were missing a few features
-                that I would've liked to see. I didn't like having to search the wiki to be able to look at and manipulate the patterns people have made.
+                It wasn&apos;t till a few weeks ago when I decided to play around with Conway&apos;s Game of Life myself. The websites I found were amazing and the performance was unbeatable, however they were missing a few features
+                that I would&apos;ve liked to see. I didn&apos;t like having to search the wiki to be able to look at and manipulate the patterns people have made.
                 I would also like to be able to add multiple patterns to one workspace and see how they interact with each other.
               </p>
               <br />
@@ -109,7 +109,7 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
               </p>
               <h3 className="mt-5 text-l">Vision</h3>
               <p>
-                I want to build a visually appealing Conway's Game of Life that is more community driven than existing Game of Life apps.
+                I want to build a visually appealing Conway&apos;s Game of Life that is more community driven than existing Game of Life apps.
                 I would like people to be able to save and upload their creations and have a UI where those creations are easy to browse
                 and drag into your workspace.
               </p>
@@ -125,7 +125,7 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
 
               <p>
                 I feel like the best place to start on this project is to put a grid on the screen. My first reaction is to just use a map function with a bunch of divs.
-                This approach would make styling the grid easy, however I want to make the grid big while still having decent performance. I don't think my computer would
+                This approach would make styling the grid easy, however I want to make the grid big while still having decent performance. I don&apos;t think my computer would
                 appreciate me rendering thousands of tiny dom elements so that Idea is out.
               </p>
               <br />
@@ -134,7 +134,7 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
 
                 Another approach is to use an HTML canvas. With a canvas, Building and styling our grid will be a little more tricky, however the performance will be
                 worth it. Also, I would be able to calculate and render our initial base grid only once, then have overlapping canvases that could render all of our
-                changing tiles. Let's do it this way.
+                changing tiles. Let&apos;s do it this way.
               </p>
               <br />
 
@@ -157,7 +157,7 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
               </p>
               <br />
               <p>
-                Next, I would like to be able to track our mouse position on the screen, and highlight what square we are hovering over. I don't have a ton of experience
+                Next, I would like to be able to track our mouse position on the screen, and highlight what square we are hovering over. I don&apos;t have a ton of experience
                 with react event listeners but when researching, I found a blog by Josh Comeau where he made a react hook for using the mouse position. His blogs are
                 great and helped me out when making this website too. <a className='text-dankRed underline' href='https://www.joshwcomeau.com/snippets/react-hooks/use-mouse-position/' target='blank'>Check him out here.</a>
               </p>
@@ -165,7 +165,7 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
               <p>
 
                 I made a react component CanvasOverlay.tsx that re-renders another canvas every time our mouse position changes. Separating this piece into a different
-                canvas will spare us from re-rendering our base grid over and over which is an expensive computation. Now it's time to draw our highlight square.
+                canvas will spare us from re-rendering our base grid over and over which is an expensive computation. Now it&apos;s time to draw our highlight square.
               </p>
               <br />
               <CodeBlock code={hoverSquareCode} language='javascript' />
@@ -182,7 +182,7 @@ export function drawSquare(context: CanvasRenderingContext2D, xGrid: number, yGr
               <br />
 
               <p>
-                Damn that's one good looking grid.
+                Damn that&apos;s one good looking grid.
                 Next I will be getting to the fun part of placing pieces, and writing the actual game logic. Until next time!
               </p>
 
