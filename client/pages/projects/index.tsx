@@ -51,7 +51,7 @@ function Projects() {
               Ever since I took my first steps in programming, I have loved the process of building projects. Whether I am creating software to solve a
               problem in my life or just familiarizing myself with a new technology or language, every project has helped me grow as a developer.
               <br /><br />
-              To the right is my tech stack. <span className='text-dankRed'>click on a square</span> to see a brief summary of the language as well as my proficiency level.
+              To the right is my tech stack. <span className='text-dankRed'>Click on a square</span> to see a brief summary of the language as well as my proficiency level.
             </div>
           </div>
 
